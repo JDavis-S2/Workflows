@@ -1,0 +1,54 @@
+
+
+// Define the function to concatenate non-empty properties
+function concatenateProperties(contact) {
+    // Retrieve the values of the five properties from the contact
+    const propertyA = contact.properties.property_a ? contact.properties.property_a : '';
+    const propertyB = contact.properties.property_b ? contact.properties.property_b : '';
+    const propertyC = contact.properties.property_c ? contact.properties.property_c : '';
+    const propertyD = contact.properties.property_d ? contact.properties.property_d : '';
+    const propertyE = contact.properties.property_e ? contact.properties.property_e : '';
+
+    // Initialize an empty array to store non-empty properties
+    const nonEmptyProperties = [];
+
+    // Check each property value to see if it's empty
+    if (propertyA) {
+        nonEmptyProperties.push(propertyA);
+    }
+    if (propertyB) {
+        nonEmptyProperties.push(propertyB);
+    }
+    if (propertyC) {
+        nonEmptyProperties.push(propertyC);
+    }
+    if (propertyD) {
+        nonEmptyProperties.push(propertyD);
+    }
+    if (propertyE) {
+        nonEmptyProperties.push(propertyE);
+    }
+
+    // Concatenate non-empty properties into a single string
+    const concatenatedString = nonEmptyProperties.join(' ');
+
+    // Return the concatenated string
+    return concatenatedString;
+}
+
+// Sample contact object with properties
+const sampleContact = {
+    properties: {
+        property_a: 'Value A',
+        property_b: '',
+        property_c: 'Value C',
+        property_d: 'Value D',
+        property_e: ''
+    }
+};
+
+// Call the function with the sample contact
+const result = concatenateProperties(sampleContact);
+
+// Print the result
+console.log("Concatenated String:", result);
